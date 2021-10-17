@@ -21,7 +21,7 @@ public class PinguRacing extends MiniJava {
             write("t = " + seconds);
             if (speed_a <= 0) speed_a = 0;
             if (speed_b <= 0) speed_b = 0;
-            if (userinput_posa % 10 == 4) speed_a = (speed_a / 2) + 1;
+            if (userinput_posa % 10 == 4 || userinput_posa % 10 == -4) speed_a = (speed_a / 2) + 1;
             else speed_a += 7;
             if (userinput_posb % 13 == 0) speed_b = (speed_b * 2) + 1;
             else speed_b += 3;
@@ -30,8 +30,10 @@ public class PinguRacing extends MiniJava {
             seconds++;
             userinput_posa += speed_a;
             userinput_posb += speed_b;
-            write("Alan position = " + userinput_posa + ";" +  " speed = " + speed_a);
-            write("Bjarne position = " + userinput_posb + ";" + " speed = " + speed_b);
+            writeConsole("Alan position = " + userinput_posa + ";");
+            write(" speed = " + speed_a);
+            writeConsole("Bjarne position = " + userinput_posb + ";");
+            write(" speed = " + speed_b);
         }
         while (seconds < userinput_time) {
             write("t = " + seconds);
@@ -47,11 +49,13 @@ public class PinguRacing extends MiniJava {
             seconds++;
             userinput_posa += speed_a;
             userinput_posb += speed_b;
-            write("Alan position = " + userinput_posa + ";" +  " speed = " + speed_a);
-            write("Bjarne position = " + userinput_posb + ";" + " speed = " + speed_b);
+            writeConsole("Alan position = " + userinput_posa + ";");
+            write(" speed = " + speed_a);
+            writeConsole("Bjarne position = " + userinput_posb + ";");
+            write(" speed = " + speed_b);
         }
-        if (userinput_posa == userinput_posb) writeConsole("Draw!");
-        else if (userinput_posa > userinput_posb) writeConsole("Alan wins!");
-        else writeConsole("Bjarne wins!");
+        if (userinput_posa == userinput_posb) write("Draw!");
+        else if (userinput_posa > userinput_posb) write("Alan wins!");
+        else write("Bjarne wins!");
     }
 }
