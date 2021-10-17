@@ -21,7 +21,7 @@ public class PinguRacing extends MiniJava {
             write("t = " + seconds);
             if (speed_a <= 0) speed_a = 0;
             if (speed_b <= 0) speed_b = 0;
-            if (userinput_posa % 10 == 4 || userinput_posa % 10 == -4) speed_a = (speed_a / 2) + 1;
+            if (userinput_posa % 10 == 4) speed_a = (speed_a / 2) + 1;
             else speed_a += 7;
             if (userinput_posb % 13 == 0) speed_b = (speed_b * 2) + 1;
             else speed_b += 3;
