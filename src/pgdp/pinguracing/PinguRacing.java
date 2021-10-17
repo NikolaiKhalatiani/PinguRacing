@@ -30,10 +30,8 @@ public class PinguRacing extends MiniJava {
             seconds++;
             userinput_posa += speed_a;
             userinput_posb += speed_b;
-            writeConsole("Alan position = " + userinput_posa + ";");
-            write(" speed = " + speed_a);
-            writeConsole("Bjarne position = " + userinput_posb + ";");
-            write(" speed = " + speed_b);
+            write("Alan position = " + userinput_posa + ";" +  " speed = " + speed_a);
+            write("Bjarne position = " + userinput_posb + ";" + " speed = " + speed_b);
         }
         while (seconds < userinput_time) {
             write("t = " + seconds);
@@ -49,10 +47,8 @@ public class PinguRacing extends MiniJava {
             seconds++;
             userinput_posa += speed_a;
             userinput_posb += speed_b;
-            writeConsole("Alan position = " + userinput_posa + ";");
-            write(" speed = " + speed_a);
-            writeConsole("Bjarne position = " + userinput_posb + ";");
-            write(" speed = " + speed_b);
+            write("Alan position = " + userinput_posa + ";" +  " speed = " + speed_a);
+            write("Bjarne position = " + userinput_posb + ";" + " speed = " + speed_b);
         }
         if (userinput_posa == userinput_posb) writeConsole("Draw!");
         else if (userinput_posa > userinput_posb) writeConsole("Alan wins!");
