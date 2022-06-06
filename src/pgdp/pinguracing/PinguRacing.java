@@ -2,60 +2,58 @@ package pgdp.pinguracing;
 
 import pgdp.MiniJava;
 
-import static pgdp.MiniJava.*; //Diesen Import nicht löschen! Do not delete this import!
-
 public class PinguRacing extends MiniJava {
     public static void main(String[] args) {
-        int userinput_posa = readInt("Alan starting position:");
-        int userinput_posb = readInt("Bjarne starting position:");
-        int userinput_time = readInt("Race duration:");
-        while (userinput_time < 0) {
-            writeConsole("Please do not enter a negative number:");
-            userinput_time = readInt("");
+        int userInputPosA = readInt("Alan starting position:");
+        int userInputPosB = readInt("Bjarne starting position:");
+        int userInputDuration = readInt("Race duration:");
+        while (userInputDuration < 0) {
+            System.out.print("Please do not enter a negative number:");
+            userInputDuration = readInt("Race duration:");
         }
         int seconds = 0;
-        int speed_b = 0;
-        int speed_a = 0;
-        int speed_max = 128;
-        while (seconds < userinput_time / 2) {
-            write("t = " + seconds);
-            if (speed_a <= 0) speed_a = 0;
-            if (speed_b <= 0) speed_b = 0;
-            if (userinput_posa % 10 == 4 || userinput_posa % 10 == -4) speed_a = (speed_a / 2) + 1;
-            else speed_a += 7;
-            if (userinput_posb % 13 == 0) speed_b = (speed_b * 2) + 1;
-            else speed_b += 3;
-            if (speed_a >= speed_max) speed_a = speed_max;
-            if (speed_b >= speed_max) speed_b = speed_max;
+        int speedB = 0;
+        int speedA = 0;
+        int maxSpeed = 128;
+        while (seconds < userInputDuration / 2) {
+            System.out.println("t = " + seconds);
+            if (speedA <= 0) speedA = 0;
+            if (speedB <= 0) speedB = 0;
+            if (userInputPosA % 10 == 4 || userInputPosA % 10 == -4) speedA = (speedA / 2) + 1;
+            else speedA += 7;
+            if (userInputPosB % 13 == 0) speedB = (speedB * 2) + 1;
+            else speedB += 3;
+            if (speedA >= maxSpeed) speedA = maxSpeed;
+            if (speedB >= maxSpeed) speedB = maxSpeed;
             seconds++;
-            userinput_posa += speed_a;
-            userinput_posb += speed_b;
-            writeConsole("Alan position = " + userinput_posa + ";");
-            write(" speed = " + speed_a);
-            writeConsole("Bjarne position = " + userinput_posb + ";");
-            write(" speed = " + speed_b);
+            userInputPosA += speedA;
+            userInputPosB += speedB;
+            System.out.print("Alan position = " + userInputPosA + ";");
+            System.out.println(" speed = " + speedA);
+            System.out.print("Bjarne position = " + userInputPosB + ";");
+            System.out.println(" speed = " + speedB);
         }
-        while (seconds < userinput_time) {
-            write("t = " + seconds);
-            if (seconds == userinput_time * 3 / 5) speed_a /= 4;
-            else if (seconds == userinput_time * 4 / 5) speed_a /= 4;
-            else speed_a++;
-            if (seconds >= userinput_time - 13) speed_b /= 2;
-            else speed_b--;
-            if (speed_a >= speed_max) speed_a = speed_max;
-            else if (speed_a <= 0) speed_a = 0;
-            if (speed_b >= speed_max) speed_b = speed_max;
-            else if (speed_b <= 0) speed_b = 0;
+        while (seconds < userInputDuration) {
+            System.out.println("t = " + seconds);
+            if (seconds == userInputDuration * 3 / 5) speedA /= 4;
+            else if (seconds == userInputDuration * 4 / 5) speedA /= 4;
+            else speedA++;
+            if (seconds >= userInputDuration - 13) speedB /= 2;
+            else speedB--;
+            if (speedA >= maxSpeed) speedA = maxSpeed;
+            else if (speedA <= 0) speedA = 0;
+            if (speedB >= maxSpeed) speedB = maxSpeed;
+            else if (speedB <= 0) speedB = 0;
             seconds++;
-            userinput_posa += speed_a;
-            userinput_posb += speed_b;
-            writeConsole("Alan position = " + userinput_posa + ";");
-            write(" speed = " + speed_a);
-            writeConsole("Bjarne position = " + userinput_posb + ";");
-            write(" speed = " + speed_b);
+            userInputPosA += speedA;
+            userInputPosB += speedB;
+            System.out.print("Alan position = " + userInputPosA + ";");
+            System.out.println(" speed = " + speedA);
+            System.out.print("Bjarne position = " + userInputPosB + ";");
+            System.out.println(" speed = " + speedB);
         }
-        if (userinput_posa == userinput_posb) write("Draw!");
-        else if (userinput_posa > userinput_posb) write("Alan wins!");
-        else write("Bjarne wins!");
+        if (userInputPosA == userInputPosB) System.out.println("Draw!");
+        else if (userInputPosA > userInputPosB) System.out.println("Alan wins!");
+        else System.out.println("Bjarne wins!");
     }
 }
