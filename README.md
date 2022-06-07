@@ -149,7 +149,7 @@ Bjarne wins!
 ```
 
 ### FAQ
-Q: What is this weird [a;b)[a; b)[a;b) notation?  
+Q: What is this weird [a;b) notation?  
 A: A half-open interval, i.e. the set of whole numbers xxx for which applies a≤x&lt;ba \leq x &lt; ba≤x<b.
 
 Q: What is this ⌊x⌋\lfloor x \rfloor⌊x⌋ notation?
