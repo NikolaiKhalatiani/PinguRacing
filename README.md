@@ -150,10 +150,7 @@ Bjarne wins!
 
 ### FAQ
 Q: What is this weird [a;b) notation?  
-A: A half-open interval, i.e. the set of whole numbers xxx for which applies a≤x&lt;ba \leq x &lt; ba≤x<b.
+A: A half-open interval, i.e. the set of whole numbers _**x**_ for which applies a≤x<b.
 
-Q: What is this ⌊x⌋\lfloor x \rfloor⌊x⌋ notation?
-A: That means xxx is rounded down, e.g. if x=2.9x=2.9x=2.9 then ⌊x⌋=2\lfloor x \rfloor = 2⌊x⌋=2.
-
-Q: Why does it look in example 2 and 3 as if the penguins are already moving at t = 0?
+Q: Why does it look in example 2 and 3 as if the penguins are already moving at t = 0?  
 A: The specification of t is always at the beginning of the time interval, whereas the position and speed of the positions are output from the end of the time interval.
