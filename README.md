@@ -5,68 +5,36 @@ Alan and Bjarne are the two fastest penguins in Antarctica. In order to decide w
 
 ## The rules of the race
 The integer variable _**t**_ represents the time over the course of the race. The total duration of the race is _**t<sub>duration</sub>**_ seconds,
-so the time _**t**_ runs in the interval _**[0; t<sub>duration</sub>)**_.
+so the time _**t**_ runs in the interval <strong><i>[0; t<sub>duration</sub>)</strong></i>.
 The program calculates the positions and speeds of the two penguins for every second of the race.
 
 The integer positions of Alan and Bjarne are _**posA**_ and _**posB**_ respectively, and can have any initial values. The integer speeds of Alan and Bjarne are
 _**spe<sub>A</sub>**_ and _**spe<sub>B</sub>**_ respectively, and both are 0 at the start.
 Every second in the first half of the race _**[0 ; <sup>t<sub>duration</sub></sup>&frasl;<sub>2</sub>)**_ the following rules apply to determine the speed of the penguins:
 <ul>
-<li>Alan suffers from <a href="https://en.wikipedia.org/wiki/Tetraphobia">Tetraphobia</a>. So if its current position <strong><i>posA</i></strong> ends with the number 4, its speed <strong><i>speA</i><strong>
-is halved (if necessary it is rounded down) and increased by 1. </li>
+<li>Alan suffers from <a href="https://en.wikipedia.org/wiki/Tetraphobia">Tetraphobia</a>. So if its current position <strong><i>posA</i></strong> ends with the number 4, its speed <strong><i>speA</i></strong> is halved (if necessary it is rounded down) and increased by 1. </li>
 <li>Otherwise Alan is not afraid and can increase his speed speAspe_Aspe by 7.</li>
-<li>Bjarne, on the other hand, suffers from <a href="https://en.wikipedia.org/wiki/Triskaidekaphobia">Triskaidekaphobia</a>. So if his current position <strong><i>posB</i></strong> is divisible by 13,
+<li>Bjarne, on the other hand, suffers from <a href="https://en.wikipedia.org/wiki/Triskaidekaphobia">Triskaidekaphobia</a>. So if his current position 
+ <strong><i>posB</i></strong> is divisible by 13,
 he gets an adrenaline rush and doubles his speed <strong><i>speB</i></strong> and increases it by an additional 1.</li>
 <li>Otherwise Bjarne doesn't panic and can increase his speed <strong><i>speB</i></strong> by 3. </li>
   </ul>
 In the second half of the race <strong><i>[<sup> t<sub>duration</sub></sup>&frasl;<sub>2</sub> ; t<sub>duration</sub>)</i></strong> the above rules no longer apply, but only the following:
-<>
-Basically, <strong><i>speA</i></strong>is now increased by 1 per time step. Only at the times ⌊35⋅tduration⌋\lfloor \frac{3}{5} \cdot t_{duration} \rfloor⌊ 
-5
-3
-​
- ⋅t 
-duration
-​
- ⌋ and ⌊45⋅tduration⌋\lfloor \frac{4}{5} \cdot t_{duration} \rfloor⌊ 
-5
-4
-​
- ⋅t 
-duration
-​
- ⌋ wird speAspe_Aspe 
-A
-​
-  is divided by 4 and rounded down if necessary.
-  
-Basically, wird speBspe_Bspe 
-B
-​
- is now reduced by 1 per time step. Only in the last 13 seconds ([tduration−13;tduration)[t_{duration}-13; t_{duration})[t 
-duration
-​
- −13;t 
-duration
-​
- )) Bjarne is unlucky and stumbles, so that his speed is halved every second and rounded down if necessary.
-  </ul>
-There is also a maximum speed spemax=128spe_{max} = 128spe 
-max
-​
- =128, which must never be exceeded at any time. The speeds can never be negative either. I.e. if the speed exceeds the spemaxspe_{max}spe 
-max
-​
-  or falls below 0 according to the above rules, the speed is simply set to spemaxspe_{max}spe 
-max
-​
-  or 0.
+<ul>
+<li>
+Basically, <strong><i>speA</i></strong> is now increased by 1 per time step. Only at the times <strong<i><sup>3</sup>&frasl;<sub>5</sub>⋅t<sub>duration</sub></i></strong> and <strong<i><sup>4</sup>&frasl;<sub>5</sub>⋅t<sub>duration</sub></i></strong> <strong><i>speA</i></strong> is divided by 4 and rounded down if necessary. </li>
+<li>
+Basically, <strong><i>speB</i></strong> is now reduced by 1 per time step. Only in the last 13 seconds 
+<strong><i>[t<sub>duration</sub> -13 ; t<sub>duration</sub>)</i></strong> Bjarne is unlucky and stumbles,
+so that his speed is halved every second and rounded down if necessary.</li>
+ </ul>
+There is also a maximum <strong><i>spe<sub>max</sub>=128</i></strong>, which must never be exceeded at any time. The speeds can never be negative either. I.e. if the speed exceeds the <strong><i>spe<sub>max</sub></i></strong> or falls below 0 according to the above rules, the speed is simply set to <strong><i>spe<sub>max</sub></i></strong> or 0.  
 
-After the current speed has been determined for the time ttt the position of the penguin is simply increased by the speed.
+After the current speed has been determined for the time <strong><i>t</i></strong> the position of the penguin is simply increased by the speed.
 
 In the end, the penguin with the highest position wins. A draw can of course also occur.
 
-Program Statement
+### Program Statement
 Your program should ask the starting positions of Alan and Bjarne, as well as the duration of the race, and simulate the race.
 
 The command prompt via the console should look like this:
