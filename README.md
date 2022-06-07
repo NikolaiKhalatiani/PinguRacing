@@ -34,43 +34,48 @@ After the current speed has been determined for the time <strong><i>t</i></stron
 
 In the end, the penguin with the highest position wins. A draw can of course also occur.
 
-### Program Statement
+## Program Statement
 Your program should ask the starting positions of Alan and Bjarne, as well as the duration of the race, and simulate the race.
 
 The command prompt via the console should look like this:
-
+```
 Alan starting position:
+```
+```
 Bjarne starting position:
+```
+```
 Race duration:
+```
 If the entered race duration is negative, the following error message should be issued repeatedly until a non-negative race duration is entered:
-
+```
 Please do not enter a negative number:
+```
 For every second of the simulation, the positions and speeds of Alan and Bjarne should be output as follows:
-
+```
 t = <time>
 Alan position = <posA>; speed = <speA>
 Bjarne position = <posB>; speed = <speB>
-It stands <time> for ttt, <posA> for posApos_Apos 
-A
-​
- , <speA> for speAspe_Aspe 
-A
-​
- , and so forth.
+```
+It stands \<time> for <strong><i>t</i></strong>, \<posA> for <strong><i>pos<sub>A</sub></i></strong> , \<speA> for <strong><i>spe<sub>A</sub></i></strong> , and so forth.
 
 In the end, the winning penguin should be handed out. So if Alan wins:
-
+```
 Alan wins!
+```
 If Bjarne wins:
-
+```
 Bjarne wins!
+```
 And if the race ends in a draw:
-
+```
 Draw!
-Examples
+```
+### Examples
 The lines that begin with "> " mark the user input and are not output by the program. They are only given for the sake of clarity.
 
- example 1: Error messages 1 of 1 tests passing
+example 1: Error messages
+```
 Alan starting position:
 > 0
 Bjarne starting position:
@@ -82,7 +87,9 @@ Please do not enter a negative number:
 Please do not enter a negative number:
 > 0
 Draw!
- example 2: Alan wins 1 of 1 tests passing
+```
+ example 2: Alan wins
+ ```
 Alan starting position:
 > 3
 Bjarne starting position:
@@ -108,7 +115,9 @@ t = 5
 Alan position = 35; speed = 1
 Bjarne position = 28; speed = 1
 Alan wins!
- example 3: Bjarne wins 1 of 1 tests passing
+```
+ example 3: Bjarne wins
+ ```
 Alan starting position:
 > -3
 Bjarne starting position:
@@ -137,10 +146,10 @@ t = 6
 Alan position = 35; speed = 1
 Bjarne position = 36; speed = 0
 Bjarne wins!
+```
 
-
-FAQ
-Q: What is this weird [a;b)[a; b)[a;b) notation?
+### FAQ
+Q: What is this weird [a;b)[a; b)[a;b) notation?  
 A: A half-open interval, i.e. the set of whole numbers xxx for which applies a≤x&lt;ba \leq x &lt; ba≤x<b.
 
 Q: What is this ⌊x⌋\lfloor x \rfloor⌊x⌋ notation?
